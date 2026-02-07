@@ -36,7 +36,7 @@ def check_disk(threshold):
 
 
 def main():
-    print(f"============SYSTEM HEALTH CHECK=============")
+    print("""SYSTEM HEALTH CHECK""")
     cpu_t, memory_t, disk_t = get_thresholds()
 
     check_cpu(cpu_t)
