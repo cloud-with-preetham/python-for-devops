@@ -6,13 +6,13 @@ import json
 API_URL = "https://jsonplaceholder.typicode.com/users"
 OUTPUT_FILE = "output.json"
 
-def fetch_user():# -> Any:
+def fetch_user():
     """I am fetching the user data from public API"""
     response = requests.get(API_URL)
     response.raise_for_status() # Raises errors if API calls fails.
     return response.json()
 
-def process_users(users): # -> list[Any]:
+def process_users(users):
     """I am scraping/extracting meaningful information from API response"""
     processed_data = []
 
@@ -27,7 +27,7 @@ def process_users(users): # -> list[Any]:
         })
     return processed_data
 
-def save_to_json(data,filename) -> None:
+def save_to_json(data,filename):
     """I am saving the processed data to JSON file"""
     with open(filename, "w") as f:
         json.dump(data,f,indent=1)
