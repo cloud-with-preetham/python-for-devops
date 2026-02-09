@@ -6,7 +6,7 @@ info = {
     "favourites" : ["DevOps", "Linux", "python"]
 }
 
-print(f"I am {info["name"]}, from {info["city"]}. I am {info["age"]}years old. My qualification is: I am a {info["qualification"]}") 
+print(f"I am {info["name"]}, from {info["city"]}. I am {info["age"]}years old. My qualification is: I am a {info["qualification"]}")
 print("I love", info.get("favorites", "Not found"))
 # print(info.get.__doc__)
 # print(dir(info))
@@ -14,4 +14,3 @@ print("I love", info.get("favorites", "Not found"))
 # Iterate a Dict
 for key,value in info.items():
     print(key,value)
-    
