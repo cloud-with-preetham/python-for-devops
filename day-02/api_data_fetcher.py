@@ -30,7 +30,7 @@ def process_users(users):
 def save_to_json(data,filename):
     """I am saving the processed data to JSON file"""
     with open(filename, "w") as f:
-        json.dump(data,f,indent=1)
+        json.dump(data,f,indent=4)
 
 def main():
     print("Fetching data from API")
