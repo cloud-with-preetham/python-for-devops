@@ -29,7 +29,7 @@ def analyze_logs(lines):
 
     for line in lines:
         for level in counts:
-            if level in level.upper():
+            if level in line.upper():
                 counts[level] += 1
     return counts
 
@@ -44,15 +44,15 @@ def print_summary(summary):
     print("-" * 30)
 
 
-def write_summary_to_file(summary, output_file):
+def write_summary_to_file(summary, OUTPUT_FILE):
     """Write summary to JSON file"""
     data = {"generated at": datetime.now().isoformat(), "summary": summary}
 
     try:
-        with open(output_file, "w", encoding="utf-8") as file:
+        with open(OUTPUT_FILE, "w", encoding="utf-8") as file:
             json.dump(data, file, indent=4)
 
-        print(f"\nSummary  written to {output_file}")
+        print(f"\nSummary  written to {OUTPUT_FILE}")
 
     except Exception as err:
         print(f"Failed writing output file {err}")
