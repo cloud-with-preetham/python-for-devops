@@ -10,11 +10,11 @@ OUTPUT_FILE = "output.json"
 def fetch_user():
     """I am fetching the user data from public API"""
     try:
-        response = requests.get(API_URL,timeout=5)
+        response = requests.get(API_URL,timeout=5) # Added timeout=5 -> It prevents script from hanging forever in production
         response.raise_for_status() # Raises errors if API calls fails.
         return response.json()
     
-    except RequestException as error:
+    except RequestException as error: # If any network issue it won't crash the script.
         print(f"Error fetching data from API: {error}")
 
 def process_users(users):
@@ -32,7 +32,7 @@ def process_users(users):
             "name": user.get("name"),
             "username": user.get("username"),
             "email": user.get("email"),
-            "city": user.get("address",{}).get("city"),
+            "city": user.get("address",{}).get("city"), # Instead of user["address"]["city"] > changed it to user.get("address,{}").get("city"), -> This prevents id address is missing.
             "company": user.get("company",{}).get("name")        
             })
         except (KeyError, TypeError) as error:
@@ -42,7 +42,7 @@ def process_users(users):
 def save_to_json(data,filename):
     """I am saving the processed data to JSON file"""
     try:
-        with open(filename, "w") as f:
+        with open(filename, "w") as f: # It prevent from crashing -> if no write permissions, Disk issue, Invalid path. 
             json.dump(data,f,indent=4)
         print(f"Data successfully saved to {filename}")
     

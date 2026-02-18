@@ -17,7 +17,7 @@ print(f"Indian cloud service provider is: {clouds[-3]}")
 
 # print(dir(clouds))
 # print(clouds.reverse.__doc__)
-
+# Iterate a list
 for cloud in clouds:
     if cloud == "aws":
         print(f"{cloud} is the market leader in the cloud industry.")
