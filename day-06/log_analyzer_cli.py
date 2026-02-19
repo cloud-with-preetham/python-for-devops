@@ -31,6 +31,8 @@ class LogAnalyzer:
                 counts["WARNING"] += 1
             elif "INFO" in line:
                 counts["INFO"] += 1
+            else:
+                pass
 
         return counts
 
