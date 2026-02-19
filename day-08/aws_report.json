@@ -1,0 +1,20 @@
+{
+    "GeneratedAt": "2026-02-19T12:38:13.842804",
+    "EC2Instances": [
+        {
+            "InstanceId": "i-06402b9d9669929d0",
+            "State": "stopped"
+        }
+    ],
+    "S3Buckets": [
+        {
+            "BucketName": "hamzaa-ki-bucket"
+        },
+        {
+            "BucketName": "practice-josh-batch"
+        },
+        {
+            "BucketName": "preetham-documents"
+        }
+    ]
+}
