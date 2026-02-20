@@ -1,20 +1,21 @@
 import boto3
 
+
 class AWSutil:
     def __init__(self):
-        self.s3 = self.get_connection('s3')
-        self.ec2 = self.get_connection('ec2')
+        self.s3 = self.get_connection("s3")
+        self.ec2 = self.get_connection("ec2")
 
     def get_connection(self, service):
-        return boto3.client(service)  # creating a client for s3 so that it can call APIs
-
+        return boto3.client(
+            service
+        )  # creating a client for s3 so that it can call APIs
 
     def show_buckets(self):
         response = self.s3.list_buckets()
 
         for bucket in response["Buckets"]:
             print(bucket["Name"])
-
 
     def create_bucket(self, bucket_name):
         try:
@@ -31,15 +32,14 @@ class AWSutil:
         except:
             print("Error occured")
 
-
     def show_regions(self):
         response = self.ec2.describe_regions()
         # print(response)
 
-
     def upload_to_bucket(self, file_path, bucket_name, key_name):
         self.s3.upload_file(file_path, bucket_name, key_name)
         print("File uploaded successfully")
+
 
 if __name__ == "__main__":
 
