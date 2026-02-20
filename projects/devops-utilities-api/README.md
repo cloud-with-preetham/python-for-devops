@@ -13,7 +13,7 @@ This project aims to deliver production grade utilities APIs to internal teams:
 ### Clone the repository:
 
 ```bash
-git clone https://github.com/cloud-with-preetham/python-for-devops/tree/3186f81579755097fc9c38c19df75be1d69bfac8/projects/devops-utilities-api
+git clone <add the link here>
 ```
 
 ### Setup python environment
